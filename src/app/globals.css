@@ -1,0 +1,234 @@
+@import "tailwindcss";
+
+@theme {
+  --color-freedconn-teal: #7abbc0;
+  --color-freedconn-teal-dark: #6bb8be;
+  --color-freedconn-teal-light: #53b8bd;
+  --color-freedconn-dark: #1a1a1a;
+  --color-freedconn-black: #000000;
+  --color-freedconn-orange: #ff5500;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #111111;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  color: #111111;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Reference Exact Styles: Header .top */
+.fc-top-header {
+  background-color: #1a1a1a;
+  padding: 12px 0;
+  position: relative;
+  z-index: 50;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+/* Reference Exact Styles: .fc-tech-wrapper for NUESTROS COMPROMISOS */
+.fc-tech-wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 85px 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif, system-ui;
+  position: relative;
+  overflow: hidden;
+}
+
+.fc-tech-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#7abbc0 0.85px, transparent 0.85px);
+  background-size: 26px 26px;
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+.fc-tech-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.fc-tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 50px;
+  text-align: left;
+}
+
+.fc-tech-card {
+  flex: 1 1 240px;
+  max-width: 270px;
+  background: #f8fafb;
+  border: 1px solid #e2ecee;
+  padding: 38px 24px 30px 24px;
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 22px 100%, 0 calc(100% - 22px));
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-sizing: border-box;
+}
+
+.fc-tech-card:nth-child(even) {
+  transform: translateY(18px);
+}
+
+.fc-tech-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background: #7abbc0;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+.fc-tech-card:hover {
+  background: #ffffff;
+  border-color: #7abbc0;
+  box-shadow: 0 16px 36px rgba(122, 187, 192, 0.3);
+  transform: translateY(-10px) scale(1.025);
+}
+
+.fc-tech-card:nth-child(even):hover {
+  transform: translateY(6px) scale(1.025);
+}
+
+.fc-tech-card:hover::before {
+  background: #111111;
+}
+
+.fc-tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(122, 187, 192, 0.12);
+  border: 1px solid rgba(122, 187, 192, 0.35);
+  padding: 8px 20px;
+  border-radius: 4px;
+  color: #7abbc0;
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.fc-tech-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #7abbc0;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #7abbc0;
+}
+
+.fc-tech-num {
+  font-family: "Impact", "Arial Black", sans-serif;
+  color: transparent;
+  -webkit-text-stroke: 2px #7abbc0;
+  font-size: 52px;
+  line-height: 1;
+  margin-bottom: 14px;
+  display: block;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.fc-tech-card:hover .fc-tech-num {
+  color: #7abbc0;
+  -webkit-text-stroke: 0px transparent;
+  text-shadow: 0 0 14px rgba(122, 187, 192, 0.65);
+}
+
+.fc-tech-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111111;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.fc-tech-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 3px;
+  background: #7abbc0;
+  transition: width 0.3s ease;
+}
+
+.fc-tech-card:hover .fc-tech-title::after {
+  width: 60px;
+}
+
+.fc-tech-text {
+  color: #444444;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 400;
+}
+
+@media (max-width: 900px) {
+  .fc-tech-grid {
+    gap: 18px;
+  }
+  .fc-tech-card,
+  .fc-tech-card:nth-child(even) {
+    flex: 1 1 100%;
+    max-width: 100%;
+    transform: none !important;
+  }
+}
+
+/* Reference Exact Button Style */
+.fc-btn-teal {
+  background-color: #6bb8be;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 12px 32px;
+  font-weight: 700;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(107, 184, 190, 0.3);
+}
+
+.fc-btn-teal:hover {
+  background-color: #53b8bd;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 184, 190, 0.45);
+}
